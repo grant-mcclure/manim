@@ -1,6 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/Introduction/3977891868_3956304649_223132457.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/Introduction/2852726489_784179552_2457942639.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/Introduction/2852726489_1875010239_2383770171.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/Introduction/2852726489_784179552_2932362639.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/Introduction/2852726489_1555342384_574630669.mp4'

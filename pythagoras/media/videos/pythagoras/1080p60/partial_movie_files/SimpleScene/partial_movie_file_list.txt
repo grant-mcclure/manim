@@ -1,4 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/SimpleScene/3977891868_2416083916_223132457.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/SimpleScene/2852726489_2413809233_3868733901.mp4'
-file 'file:/Users/grant/Documents/manim/pythagoras/media/videos/pythagoras/1080p60/partial_movie_files/SimpleScene/2852726489_784179552_1873432836.mp4'
