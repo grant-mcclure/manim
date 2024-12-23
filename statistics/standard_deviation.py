@@ -152,13 +152,12 @@ class NumericalExample(Scene):
 
         # Split the question into multiple lines and center it
         question = VGroup(
-            Text("Grant takes part in a dance show, and he gains the following scores from the judges.", font_size=25),
-            Text("and he gains the following scores from the judges.", font_size=25),
-            Text("What is the Standard Deviation of the data?", font_size=20),
+            Text("Grant takes part in a dance show, and he gains scores from the judges.", font_size=25),
+            Text("What is the Standard Deviation of the data?", font_size=25),
         ).arrange(DOWN, aligned_edge=LEFT, center=True).next_to(title, DOWN)
 
         self.play(Write(question))
-        self.wait(1)
+        self.wait(3)
 
         # Display the scores
         question_numbers = MathTex("5", ",", "6", ",", "8", ",", "10", ",", "7", ",", "5").scale(1.2)
@@ -171,12 +170,14 @@ class NumericalExample(Scene):
         self.wait(2)
        
         question_numbers.generate_target()
-        question_numbers.target.to_edge(UL*3)
+        question_numbers.target.to_edge(UL*2)
        
+        self.play(FadeOut(title))
 
         self.play(MoveToTarget(question_numbers))
         self.wait(3)
 
+        
         ##step 1 find the means
         mean_equation_1 = MathTex(
             r"\text{Mean} = \frac{\text{Sum of All Numbers}}{\text{Number of Data Points}}",
@@ -230,17 +231,17 @@ class NumericalExample(Scene):
         self.play(MoveToTarget(mean_equation_4))
         self.wait(2)
 
-        x_position = [-5,1,0]
+        x_position = [-5,1.8,0]
 
 
         ##draw lines on the table
-        horizontal_line_1 = [-6,0.65,0]
-        horizontal_line_2 = [4,0.65,0]
+        horizontal_line_1 = [-6,1.4,0]
+        horizontal_line_2 = [4,1.4,0]
 
-        vertical_line_1 = [-4, 1.2,0]
+        vertical_line_1 = [-4, 2,0]
         vertical_line_1_end = [-4, -4,0]
 
-        vertical_line_2 = [1, 1.2,0]
+        vertical_line_2 = [1, 2,0]
         vertical_line_2_end = [1, -4,0]
 
         self.play(Create(Line(horizontal_line_1,horizontal_line_2, color = RED)))
@@ -303,7 +304,7 @@ class NumericalExample(Scene):
 
         new_column_group = VGroup(*x_x_barsq)
         self.play(Write(new_column_group))
-        self.wait(3)
+        self.wait(10)
 
         sum_x_xbar_sq = MathTex(r'\sum (x - \bar{x})^2', font_size = 30, color = YELLOW).to_edge(RIGHT).shift(LEFT*0.5)
         self.play(Write(sum_x_xbar_sq))
@@ -333,7 +334,54 @@ class NumericalExample(Scene):
         self.clear()
         self.wait()
 
+        #do the formula
+        std1 = MathTex(r"\text{Standard Deviation} = \sqrt{\frac{\sum (x-\bar{x})^2}{n-1}}", color = RED).to_edge(UP)
+        self.play(Write(std1))
+        self.wait(4)
 
+        explanation = MathTex(r'\text{Where} \sum (x-\bar{x})^2 = 19, n = 6', color = YELLOW).next_to(std1, DOWN*2)
+        self.play(Write(explanation))
+        self.wait(4)
+
+        std2 = MathTex(r"\text{StDev} = \sqrt{\frac{19}{6-1}}").next_to(explanation, DOWN*2)
+        self.play(Write(std2))
+        self.wait(2)
+
+        std3 = MathTex(r"\mathbf{\text{StDev} = 3.8}",).next_to(std2, DOWN *2)
+        self.play(Write(std3))
+        self.wait(4)
+
+class Summary(Scene):
+    def construct(self):
+        # Title
+        title = Text("Summary of Standard Deviation", font_size=50, color=BLUE).to_edge(UP)
+        self.play(Write(title))
+        self.wait(1)
+
+        # Key Points Summary
+        points = VGroup(
+            Text("1. Standard Deviation measures the spread of data.", font_size=30),
+            Text("2. It shows how far values deviate from the mean.", font_size=30),
+            Text("3. Smaller values mean data is closer to the mean.", font_size=30),
+            Text("4. Larger values mean data is more spread out.", font_size=30)
+        ).arrange(DOWN, aligned_edge=LEFT).next_to(title, DOWN, buff=0.5)
+        self.play(FadeIn(points, shift=UP, lag_ratio=1))
+        self.wait(2)
+
+
+         #do the formula
+        std1 = MathTex(r"\text{Standard Deviation} = \sqrt{\frac{\sum (x-\bar{x})^2}{n-1}}", color = YELLOW).next_to(points, DOWN*2)
+        self.play(Write(std1))
+        self.wait(4)
+
+
+        # Emphasis Statement
+        emphasis = Text(
+            "Standard Deviation helps analyse data consistency!",
+            font_size=30, color=ORANGE
+        ).to_edge(DOWN, buff=1)
+        self.play(Write(emphasis))
+        self.wait(3)
 
 
 
